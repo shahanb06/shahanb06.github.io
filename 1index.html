@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shahan Baksh — Computer Science, Wilfrid Laurier University</title>
+<meta name="description" content="Shahan Baksh — computer science student at Wilfrid Laurier University. Backend and distributed systems in Go, Redis, TypeScript and Node.">
+<meta property="og:title" content="Shahan Baksh — Resume">
+<meta property="og:description" content="Computer science student at Wilfrid Laurier University. Backend and distributed systems in Go, Redis, TypeScript and Node.">
+<meta property="og:type" content="profile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62.5..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#E9EDF2;
+    --ink:#0D1B2E;
+    --muted:#4E5F76;
+    --rule:#C3CEDC;
+    --accent:#4B32C3;
+    --measure:calc(100% - 0px);
+  }
+
+  *{box-sizing:border-box;}
+
+  html{-webkit-text-size-adjust:100%;}
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{
+    max-width:920px;
+    margin:0 auto;
+    padding:64px 32px 96px;
+  }
+
+  a{color:inherit;text-decoration:none;}
+
+  .link{
+    color:var(--accent);
+    text-decoration:underline;
+    text-decoration-thickness:1px;
+    text-underline-offset:3px;
+    text-decoration-color:rgba(75,50,195,.35);
+    transition:text-decoration-color .18s ease, color .18s ease;
+  }
+  .link:hover{text-decoration-color:var(--accent);}
+  a:focus-visible{
+    outline:2px solid var(--accent);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+
+  /* ---------- hero ---------- */
+
+  .hero{border-bottom:1px solid var(--rule);padding-bottom:34px;}
+
+  .eyebrow{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:11px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin:0 0 22px;
+  }
+
+  h1{
+    font-family:"Archivo","Helvetica Neue",Arial,sans-serif;
+    font-variation-settings:"wdth" 115,"wght" 750;
+    font-weight:750;
+    font-size:clamp(44px,9vw,84px);
+    line-height:.94;
+    letter-spacing:-.02em;
+    margin:0;
+    text-transform:uppercase;
+  }
+
+  .lede{
+    max-width:44ch;
+    margin:20px 0 0;
+    font-size:17px;
+    color:var(--muted);
+  }
+
+  .contact{
+    list-style:none;
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px 22px;
+    padding:0;
+    margin:26px 0 0;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:13px;
+  }
+
+  /* ---------- signature: telemetry rail ---------- */
+
+  .rail{
+    margin-top:34px;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:16px 0 14px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px 40px;
+  }
+
+  .metric{min-width:88px;}
+
+  .metric b{
+    display:block;
+    font-family:"Archivo",sans-serif;
+    font-variation-settings:"wdth" 100,"wght" 700;
+    font-size:22px;
+    line-height:1.1;
+    color:var(--accent);
+    font-feature-settings:"tnum";
+  }
+
+  .metric span{
+    display:block;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:10.5px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-top:5px;
+  }
+
+  .rail-note{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:11px;
+    color:var(--muted);
+    margin:12px 0 0;
+  }
+
+  /* ---------- sections ---------- */
+
+  .section{margin-top:56px;}
+
+  .section-title{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:11px;
+    font-weight:500;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin:0 0 26px;
+    padding-bottom:10px;
+    border-bottom:1px solid var(--rule);
+  }
+
+  .entry{
+    display:grid;
+    grid-template-columns:172px 1fr;
+    gap:28px;
+    padding-bottom:34px;
+  }
+  .entry + .entry{
+    padding-top:34px;
+    border-top:1px solid rgba(195,208,220,.6);
+  }
+  .section > .entry:last-child{padding-bottom:0;}
+
+  .meta{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:12px;
+    color:var(--muted);
+    line-height:1.7;
+    padding-top:4px;
+  }
+  .meta div + div{margin-top:6px;}
+
+  h3{
+    font-family:"Archivo",sans-serif;
+    font-variation-settings:"wdth" 105,"wght" 650;
+    font-weight:650;
+    font-size:21px;
+    line-height:1.2;
+    letter-spacing:-.01em;
+    margin:0;
+  }
+
+  .role{
+    font-size:15px;
+    color:var(--muted);
+    margin:4px 0 0;
+  }
+
+  .stack{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:12px;
+    color:var(--muted);
+    margin:10px 0 0;
+  }
+
+  ul.points{
+    list-style:none;
+    padding:0;
+    margin:14px 0 0;
+  }
+  ul.points li{
+    position:relative;
+    padding-left:18px;
+    margin-top:10px;
+    max-width:70ch;
+  }
+  ul.points li::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:.62em;
+    width:7px;
+    height:1px;
+    background:var(--accent);
+  }
+
+  .skills{
+    display:grid;
+    grid-template-columns:172px 1fr;
+    gap:8px 28px;
+    align-items:baseline;
+  }
+  .skills dt{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:12px;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:.08em;
+  }
+  .skills dd{margin:0;}
+
+  footer{
+    margin-top:64px;
+    padding-top:22px;
+    border-top:1px solid var(--rule);
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:11.5px;
+    color:var(--muted);
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 24px;
+  }
+
+  /* ---------- responsive ---------- */
+
+  @media (max-width:720px){
+    .wrap{padding:40px 22px 64px;}
+    .entry,.skills{grid-template-columns:1fr;gap:12px;}
+    .meta{padding-top:0;}
+    .entry .meta{order:2;}
+    .entry .body{order:1;}
+    .rail{gap:18px 28px;}
+  }
+
+  /* ---------- motion ---------- */
+
+  .fade{animation:rise .55s cubic-bezier(.2,.7,.3,1) both;}
+  .fade:nth-of-type(2){animation-delay:.06s;}
+  .fade:nth-of-type(3){animation-delay:.12s;}
+  .fade:nth-of-type(4){animation-delay:.18s;}
+  @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  @media (prefers-reduced-motion:reduce){
+    .fade{animation:none;}
+    *{transition:none !important;}
+  }
+
+  /* ---------- print → clean PDF ---------- */
+
+  @media print{
+    :root{--paper:#fff;--rule:#B9C3CF;--accent:#2B1E7A;--muted:#3D4A5C;}
+    body{font-size:10.2pt;line-height:1.42;}
+    .wrap{max-width:none;padding:0;}
+    h1{font-size:34pt;}
+    .lede{font-size:11pt;margin-top:12px;}
+    .rail{margin-top:20px;padding:10px 0;}
+    .metric b{font-size:15pt;}
+    .section{margin-top:26px;}
+    .entry{padding-bottom:16px;break-inside:avoid;}
+    .entry + .entry{padding-top:16px;}
+    ul.points li{margin-top:5px;}
+    footer{display:none;}
+    a{text-decoration:none;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero fade">
+    <p class="eyebrow">Ontario, Canada — open to Summer 2027 internships</p>
+    <h1>Shahan<br>Baksh</h1>
+    <p class="lede">Computer science student at Wilfrid Laurier University. I build backend and distributed systems in Go, Redis and TypeScript — and measure them under load.</p>
+    <ul class="contact">
+      <li><a class="link" href="mailto:shahanbaksh06@gmail.com">shahanbaksh06@gmail.com</a></li>
+      <li><a class="link" href="tel:+14372243601">437-224-3601</a></li>
+      <li><a class="link" href="https://github.com/shahanb06">github.com/shahanb06</a></li>
+      <li><a class="link" href="https://linkedin.com/in/shahanbaksh">linkedin.com/in/shahanbaksh</a></li>
+    </ul>
+
+    <div class="rail">
+      <div class="metric"><b>~5,000</b><span>req / sec</span></div>
+      <div class="metric"><b>~2 ms</b><span>p95 latency</span></div>
+      <div class="metric"><b>~106K</b><span>requests</span></div>
+      <div class="metric"><b>0</b><span>failures</span></div>
+      <div class="metric"><b>9.2 MB</b><span>static binary</span></div>
+    </div>
+    <p class="rail-note">k6 load test — distributed rate limiter, running on Fly.io across two machines.</p>
+  </header>
+
+  <main>
+
+    <section class="section fade">
+      <h2 class="section-title">Projects</h2>
+
+      <article class="entry">
+        <div class="meta">
+          <div><a class="link" href="https://rate-limiter-shahanb06.fly.dev">Live demo ↗</a></div>
+          <div><a class="link" href="https://github.com/shahanb06/rate-limiter">Source ↗</a></div>
+        </div>
+        <div class="body">
+          <h3>Distributed Rate Limiter + Analytics Pipeline</h3>
+          <p class="stack">Go · Redis · Python · PostgreSQL · Next.js · Docker · Fly.io</p>
+          <ul class="points">
+            <li>Built a distributed rate limiter in Go + Redis with fixed-window, sliding-window, and token-bucket algorithms as atomic Lua scripts (consistent under load, no distributed locks); load-tested with k6 at ~5,000 req/s, p95 ~2 ms, and zero failures across ~106K requests.</li>
+            <li>Instrumented every rate-limit decision through an event-sourced metrics pipeline: each decision emits a fire-and-forget event to a Redis Stream, which a Python worker rolls into per-minute PostgreSQL aggregates, keeping telemetry off the latency-critical <code>/check</code> path.</li>
+            <li>Built a live Next.js monitoring dashboard (per-key leaderboard, rejection-rate gauges, per-algorithm p95 latency breakdown) backed by a read-only Go analytics API isolated from the rate-limit hot path.</li>
+            <li>Deployed all three services to production on Fly.io and Vercel, with the limiter load-balanced across two machines as a 9.2 MB static Go binary.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="meta">
+          <div><a class="link" href="https://alignrai.net">alignrai.net ↗</a></div>
+          <div><a class="link" href="https://github.com/shahanb06/alignr">Source ↗</a></div>
+        </div>
+        <div class="body">
+          <h3>Alignr — AI Resume Tailoring Tool</h3>
+          <p class="stack">React · TypeScript · Vite · Node.js · Express · Anthropic API</p>
+          <ul class="points">
+            <li>Built and deployed a full-stack web app that tailors resumes to job descriptions using a constraint-driven prompt design that prevents fabricated content and surfaces missing skills honestly.</li>
+            <li>Implemented real-time response streaming via Server-Sent Events with a custom client-side parser handling progress, content, and completion events to replace blocking request UX.</li>
+            <li>Designed a strict-JSON API with server-side input validation, per-IP rate limiting, and in-memory parsing of PDF / DOCX / TXT uploads (no disk writes).</li>
+            <li>Deployed across Vercel and Render with a custom domain, environment-based builds, and CORS configuration.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="meta">
+          <div>[case]Hacks 2026</div>
+          <div>May 2026</div>
+          <div><a class="link" href="https://github.com/shahanb06/ScotiaSpark">Source ↗</a></div>
+        </div>
+        <div class="body">
+          <h3>Scotia Spark — Investing Onboarding Concept</h3>
+          <p class="stack">React Native · Expo · TypeScript</p>
+          <ul class="points">
+            <li>Built the Account and Learn screens for a mobile investing-onboarding app prototyped in a 4-person team at a Scotiabank case competition, using React Native + Expo and TypeScript.</li>
+            <li>Developed the Account dashboard surfacing investable balance across accounts, per-account goal progress (e.g. TFSA targets), and CDIC-protection status, using react-navigation and react-native-svg.</li>
+            <li>Implemented the Learn module, a bite-sized financial-education feed, with expo-haptics for interaction feedback and AsyncStorage for local progress state.</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section class="section fade">
+      <h2 class="section-title">Experience</h2>
+      <article class="entry">
+        <div class="meta">
+          <div>May 2025 — Aug 2025</div>
+          <div>Toronto, ON</div>
+        </div>
+        <div class="body">
+          <h3>Apollo Health and Beauty Care</h3>
+          <p class="role">IT Technical Support — via Timely Personnel Ltd.</p>
+          <ul class="points">
+            <li>Provided technical support for the employee time-and-attendance system, resolving punch-in / punch-out issues to keep shift records accurate.</li>
+            <li>Administered employee access cards, processing batch activations and deactivations to manage facility and system access.</li>
+            <li>Supported payroll processing by reviewing and reconciling employee hours against recorded punch data.</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section class="section fade">
+      <h2 class="section-title">Education</h2>
+      <article class="entry">
+        <div class="meta">
+          <div>Expected 2028</div>
+          <div>Waterloo, ON</div>
+        </div>
+        <div class="body">
+          <h3>Wilfrid Laurier University</h3>
+          <p class="role">Bachelor of Computer Science</p>
+          <ul class="points">
+            <li>Coursework: Data Structures II, Object-Oriented Programming, Discrete Structures, Databases, Software Engineering, Probability &amp; Statistics.</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section class="section fade">
+      <h2 class="section-title">Technical Skills</h2>
+      <dl class="skills">
+        <dt>Languages</dt><dd>Go, TypeScript, JavaScript, Python, SQL</dd>
+        <dt>Backend</dt><dd>Node.js, Express, PostgreSQL, Redis, REST APIs</dd>
+        <dt>Frontend</dt><dd>React, Next.js, React Native, Tailwind CSS, Vite, Expo</dd>
+        <dt>Testing &amp; observability</dt><dd>k6 load testing, p95 latency benchmarking, custom metrics pipelines, real-time monitoring dashboards</dd>
+        <dt>Tools &amp; AI</dt><dd>Git, Docker, Fly.io, Vercel, Claude Code, Anthropic / Claude API, Server-Sent Events</dd>
+      </dl>
+    </section>
+
+    <section class="section fade">
+      <h2 class="section-title">Leadership</h2>
+      <article class="entry">
+        <div class="meta">
+          <div>Sept 2024 — Present</div>
+        </div>
+        <div class="body">
+          <h3>The Citizens Foundation, Laurier Chapter</h3>
+          <p class="role">Vice President of Marketing</p>
+          <ul class="points">
+            <li>Lead social media and promotional campaigns for the chapter's fundraising drives and member-engagement events, helping raise over $6,000 toward The Citizens Foundation's education programs.</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>Shahan Baksh — Ontario, Canada</span>
+    <span>Print this page for a PDF copy</span>
+  </footer>
+
+</div>
+</body>
+</html>
